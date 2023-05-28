@@ -1,0 +1,32 @@
+:root {
+  scroll-behavior: smooth;
+  /* Fonts */
+  --primary-font: 'Open Sans', sans-serif;
+  --secondary-font: 'Raleway', sans-serif;
+
+  /* Color */
+  --main-txt-cl: #555555;
+  --secondary-txt-cl: #303030;
+  --light-txt-cl: #ffffff;
+  --accent-txt-cl: #ff6c00;
+
+  --main-bg-cl: #111319;
+  --accent-bg-cl: #ff6c00;
+  --light-border-cl: #ffffff;
+
+  --gray-cl: rgb(157, 164, 189);
+  --gray-cl-40: rgba(157, 164, 189, 0.4);
+  --gray-cl-60: rgba(157, 164, 189, 0.6);
+
+  /* Others */
+  --indent-horizontal: 64px;
+  --indent-vertical: 30px;
+  --items: 1;
+
+  --anim-superfast: 150ms ease-in;
+  --anim-fast: 300ms ease-in;
+  --anim-slow: 800ms ease;
+
+  --header-idx: 10;
+  --modal-idx: 100;
+}
