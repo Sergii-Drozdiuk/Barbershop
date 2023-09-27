@@ -1363,9 +1363,6 @@ body {
   color: var(--main-color);
 }
 
-.modal-form {
-}
-
 .modal-form-field {
   display: block;
   position: relative;
