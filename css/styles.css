@@ -175,6 +175,7 @@ body {
 
   cursor: pointer;
 
+  animation: bounce-top 0.9s both;
   transition: transform var(--anim-time), background-color var(--anim-time);
 }
 
@@ -185,9 +186,6 @@ body {
 .button:hover,
 .button:focus {
   background-color: var(--hover-color);
-
-  transform: scale(1.1);
-  animation: button-bounce 300ms;
 }
 
 .page-wrapper {
@@ -240,7 +238,12 @@ body {
 
 .main-logo-icon {
   fill: var(--secondary-color);
+  transition: fill var(--anim-time);
+}
 
+.main-logo-icon:hover,
+.main-logo-icon:focus {
+  fill: var(--hover-color);
   transition: fill var(--anim-time);
 }
 
@@ -264,6 +267,11 @@ body {
 
 .header.no-transparency .main-logo-icon {
   fill: var(--white-color);
+}
+
+.header.no-transparency .main-logo-icon:hover,
+.header.no-transparency .main-logo-icon:focus {
+  fill: var(--hover-color);
 }
 
 .main-nav {
@@ -401,17 +409,23 @@ body {
   }
 }
 
+.uppertitle-light {
+  -webkit-animation: move-vertical 800ms ease-in-out 500ms both;
+  animation: move-vertical 800ms ease-in-out 500ms both;
+}
+
 .hero .title {
-  width: fit-content;
+  width: 444px;
   margin-bottom: 20px;
 
   font-weight: 700;
   font-size: 48px;
   line-height: 1.18;
   letter-spacing: 0.05em;
+  text-align: center;
 
-  -webkit-animation: text-focus-in 500ms cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-  animation: text-focus-in 500ms cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  -webkit-animation: tracking-in-expand 700ms cubic-bezier(0.215, 0.61, 0.355, 1) 2200ms both;
+  animation: tracking-in-expand 700ms cubic-bezier(0.215, 0.61, 0.355, 1) 2200ms both;
 }
 
 @media screen and (min-width: 1200px) {
@@ -424,8 +438,8 @@ body {
 .hero-desc {
   max-width: 336px;
 
-  -webkit-animation: blink 600ms both;
-  animation: blink 600ms both;
+  -webkit-animation: move-vertical 800ms ease-in-out 1300ms both;
+  animation: move-vertical 800ms ease-in-out 1300ms both;
 }
 
 @media screen and (min-width: 768px) {
@@ -1598,7 +1612,7 @@ body {
 }
 
 .mobile-menu .link:hover,
-.mobile-menu .link:hover {
+.mobile-menu .link:focus {
   color: var(--accent-color);
 }
 
@@ -1637,19 +1651,73 @@ body {
 
 /**
   |============================
-  | Animfations
+  | Animations
   |============================
 */
 
-@keyframes button-bounce {
+@keyframes move-vertical {
   0% {
-    transform: translateY(0px);
+    opacity: 0;
+    transform: translateY(calc(100px * var(--direction)));
   }
   50% {
-    transform: translateY(-10px);
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-top {
+  0% {
+    transform: translateY(-45px);
+    animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(-24px);
+    animation-timing-function: ease-in;
+  }
+  65% {
+    transform: translateY(-12px);
+    animation-timing-function: ease-in;
+  }
+  82% {
+    transform: translateY(-6px);
+    animation-timing-function: ease-in;
+  }
+  93% {
+    transform: translateY(-4px);
+    animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
   }
   100% {
     transform: translateY(0px);
+    animation-timing-function: ease-out;
+    opacity: 1;
   }
 }
 
