@@ -15,7 +15,6 @@
   openMenuBtn.addEventListener('click', toggleMenu);
   closeMenuBtn.addEventListener('click', toggleMenu);
 
-  // Close the mobile menu on wider screens if the device orientation changes
   window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
     if (!e.matches) return;
     mobileMenu.classList.remove('is-open');
@@ -27,7 +26,7 @@
 const $menu = $('#mobile-menu');
 const $menu_items = $menu.find('.mobile-menu-item');
 
-$menu_items.on('click', function (ev) {
-  ev.preventDefault(); // uncomment to prevent browser scroll-to Anchor
+$menu_items.on('click', function (e) {
+  e.preventDefault(); // uncomment to prevent browser scroll-to Anchor
   $menu.removeClass('is-open');
 });

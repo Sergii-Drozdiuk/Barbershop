@@ -6,14 +6,23 @@
   --main-color: #555555;
   --secondary-color: #303030;
   --third-color: #9da4bd;
-  --main-btn-cl: #303030;
 
   --white-color: #ffffff;
   --hover-color: #ff6c00;
   --main-bg-cl: #111319;
-  --accent-color: #ff6c00;
   --card-bg-color: #f7f7f7;
-  --barbers-bg-cl: #f7f7f7;
+  --header-bg-color: #11131966;
+  --service-bg-color: #9da4bd33;
+  --border-color: #9da4bd66;
+  --form-input-valid-color: #006400;
+  --form-input-invalid-color: #8b0000;
+
+  --hero-linear-gradient: linear-gradient(#191c2633, #191c2633);
+  --services-linear-gradient: linear-gradient(180deg, #171a24 0%, #171a2433 100%);
+  --services-linear-gradient-last: linear-gradient(180deg, #090b13 0%, #090b1333 100%);
+
+  --card-box-shadow: 4px 4px 10px #0000001a;
+
   /* Others */
   --indent: 30px;
   --anim-time: 300ms;
@@ -160,7 +169,7 @@ body {
 .button {
   display: block;
   padding: 12px 20px;
-  border: 1px solid #ff6c00;
+  border: 1px solid var(--hover-color);
   border-radius: 25px;
 
   font-family: inherit;
@@ -170,7 +179,7 @@ body {
   text-align: center;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--main-btn-cl);
+  color: var(--secondary-color);
   background-color: transparent;
 
   cursor: pointer;
@@ -186,6 +195,7 @@ body {
 .button:hover,
 .button:focus {
   background-color: var(--hover-color);
+  color: var(--white-color);
 }
 
 .page-wrapper {
@@ -221,7 +231,7 @@ body {
 }
 
 .header.no-transparency {
-  background-color: rgba(17, 19, 25, 0.4);
+  background-color: var(--header-bg-color);
   backdrop-filter: blur(3px);
 }
 
@@ -330,6 +340,10 @@ body {
   }
 }
 
+.burger-menu-icon {
+  fill: var(--white-color);
+}
+
 /* Hero */
 
 .hero > .container {
@@ -339,8 +353,7 @@ body {
 @media screen and (max-width: 767px) {
   .hero > .container {
     max-width: 100%;
-    background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)),
-      url(../images/hero/hero-bg-mob@1x.jpg);
+    background-image: var(--hero-linear-gradient), url(../images/hero/hero-bg-mob@1x.jpg);
     background-size: cover;
     background-position: top right;
     background-repeat: no-repeat;
@@ -348,8 +361,7 @@ body {
 
   @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     .hero > .container {
-      background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)),
-        url(../images/hero/hero-bg-mob@2x.jpg);
+      background-image: var(--hero-linear-gradient), url(../images/hero/hero-bg-mob@2x.jpg);
     }
   }
 }
@@ -378,8 +390,7 @@ body {
     padding-bottom: 237px;
     padding-left: 100px;
 
-    background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)),
-      url(../images/hero/hero-bg-tab@1x.jpg);
+    background-image: var(--hero-linear-gradient), url(../images/hero/hero-bg-tab@1x.jpg);
     background-size: cover;
     background-position: top right;
     background-repeat: no-repeat;
@@ -387,8 +398,7 @@ body {
 
   @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     .hero-right-side {
-      background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)),
-        url(../images/hero/hero-bg-tab@2x.jpg);
+      background-image: var(--hero-linear-gradient), url(../images/hero/hero-bg-tab@2x.jpg);
     }
   }
 }
@@ -397,14 +407,12 @@ body {
   .hero-right-side {
     padding-bottom: 208px;
 
-    background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)),
-      url(../images/hero/hero-bg-desk@1x.jpg);
+    background-image: var(--hero-linear-gradient), url(../images/hero/hero-bg-desk@1x.jpg);
   }
 
   @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     .hero-right-side {
-      background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)),
-        url(../images/hero/hero-bg-desk@2x.jpg);
+      background-image: var(--hero-linear-gradient), url(../images/hero/hero-bg-desk@2x.jpg);
     }
   }
 }
@@ -615,7 +623,7 @@ body {
 
 @media screen and (max-width: 1199px) {
   .services-list {
-    background: linear-gradient(180deg, #171a24 0%, rgba(23, 26, 36, 0.2) 100%);
+    background: var(--services-linear-gradient);
     padding: 42px 33px 22px;
   }
 }
@@ -635,11 +643,11 @@ body {
   }
 
   .services-box:first-child {
-    background: linear-gradient(180deg, #171a24 0%, rgba(23, 26, 36, 0.2) 100%);
+    background: var(--services-linear-gradient);
   }
 
   .services-box:last-child {
-    background: linear-gradient(180deg, #090b13 0%, rgba(9, 11, 19, 0.2) 100%);
+    background: var(--services-linear-gradient-last);
   }
 }
 
@@ -664,7 +672,7 @@ body {
 .service-item::before {
   content: '';
   height: 1px;
-  background-color: rgba(157, 164, 189, 0.2);
+  background-color: var(--service-bg-color);
   flex-grow: 1;
 }
 
@@ -741,7 +749,7 @@ body {
   text-align: center;
   border-radius: 1px;
 
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-box-shadow);
   background-color: var(--card-bg-color);
 }
 
@@ -807,7 +815,7 @@ body {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.38;
-  color: var(--accent-color);
+  color: var(--hover-color);
 }
 
 .card-desc {
@@ -835,7 +843,7 @@ body {
 /* Our barbers */
 
 .barbers {
-  background-color: var(--barbers-bg-cl);
+  background-color: var(--card-bg-color);
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -896,7 +904,7 @@ body {
 
 .barber-accent {
   margin-bottom: 30px;
-  color: var(--accent-color);
+  color: var(--hover-color);
   font-size: 14px;
   line-height: 1.36;
   text-align: center;
@@ -924,7 +932,7 @@ body {
 
 .socials-link:hover,
 .socials-link:focus {
-  color: var(--accent-color);
+  color: var(--hover-color);
 }
 
 .social-icon {
@@ -1070,7 +1078,7 @@ body {
   color: var(--third-color);
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+  border-bottom: 1px solid var(--border-color);
   outline: transparent;
 
   transition: border-color var(--anim-time);
@@ -1116,12 +1124,12 @@ body {
 
 .booking-form-input:not(:placeholder-shown):focus:required:valid ~ .booking-valid-icon {
   opacity: 1;
-  fill: darkgreen;
+  fill: var(--form-input-valid-color);
 }
 
 .booking-form-input:not(:placeholder-shown):focus:required:invalid ~ .booking-valid-icon {
   opacity: 1;
-  fill: darkred;
+  fill: var(--form-input-invalid-color);
 }
 
 .booking-form-textarea {
@@ -1198,6 +1206,16 @@ body {
 .contacts .address-link {
   width: 212px;
   font-weight: 700;
+}
+
+.address-icon {
+  stroke: var(--third-color);
+  fill: none;
+}
+
+.contacts .link:hover,
+.contacts .link:focus {
+  color: var(--hover-color);
 }
 
 .contacts-content {
@@ -1298,7 +1316,7 @@ body {
   height: 100vh;
   width: 100vw;
 
-  background-color: rgba(17, 19, 25, 0.4);
+  background-color: var(--header-bg-color);
 
   transition: visibility 500ms, opacity 500ms;
   z-index: 10000;
@@ -1344,26 +1362,25 @@ body {
   border-radius: 50%;
 
   color: var(--white-color);
-  background-color: var(--accent-color);
+  background-color: var(--white-color);
+  border: 1px solid var(--hover-color);
 
   transition: background-color var(--anim-time), border-color var(--anim-time);
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
-  background-color: var(--white-color);
-  border: 1px solid var(--accent-color);
+  background-color: var(--hover-color);
 }
 
 .modal-close-icon {
-  fill: currentColor;
-
+  fill: var(--secondary-color);
   transition: fill var(--anim-time);
 }
 
 .modal-close-btn:hover .modal-close-icon,
 .modal-close-btn:focus .modal-close-icon {
-  fill: var(--main-btn-cl);
+  fill: var(--white-color);
 }
 
 .modal-title {
@@ -1402,16 +1419,16 @@ body {
 }
 
 .modal-form-input:not(:placeholder-shown):invalid {
-  border-color: red;
+  border-color: var(--form-input-invalid-color);
 }
 
 .modal-form-input:not(:placeholder-shown):valid {
-  border-color: green;
+  border-color: var(--form-input-valid-color);
 }
 
 .modal-form-input:focus,
 .modal-form-textarea:focus {
-  border-color: var(--accent-color);
+  border-color: var(--hover-color);
 }
 
 .modal-form-tag {
@@ -1437,7 +1454,7 @@ body {
 
 .modal-form-input:focus + .modal-form-tag,
 .modal-form-textarea:focus + .modal-form-tag {
-  color: var(--accent-color);
+  color: var(--hover-color);
 }
 
 .modal-form-input:focus + .modal-form-tag,
@@ -1460,9 +1477,8 @@ body {
 }
 
 .modal-form-input:focus ~ .modal-form-icon {
-  fill: var(--accent-color);
-
-  stroke: var(--accent-color);
+  fill: var(--hover-color);
+  stroke: var(--hover-color);
 }
 
 .modal-form-field.comment {
@@ -1497,7 +1513,17 @@ body {
 }
 
 .policy-link {
-  color: var(--accent-color);
+  color: var(--hover-color);
+  text-decoration: none;
+}
+
+.policy-link:hover,
+.policy-link:focus {
+  text-decoration: underline;
+}
+
+.policy-link:visited {
+  color: var(--secondary-color);
 }
 
 .modal-policy-checkbox {
@@ -1612,8 +1638,12 @@ body {
 }
 
 .mobile-menu .link:hover,
-.mobile-menu .link:focus {
-  color: var(--accent-color);
+.mobile-menu .link:focus,
+.mobile-menu-address .link:hover,
+.mobile-menu-address .link:focus,
+.mobile-menu .menu-side-link:hover,
+.mobile-menu .menu-side-link:focus {
+  color: var(--hover-color);
 }
 
 .mobile-menu-item:not(:last-child) {

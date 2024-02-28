@@ -68,14 +68,6 @@
                <p class="hero-desc">
                   We are experts in trendy men&rsquo;s haircuts. We work quickly, carefully and with style.
                </p>
-               <!-- </div>
-            <ul class="list">
-               <li><button class="light-btn button" type="button">Back</button></li>
-               <li>
-                  <button class="light-btn button" type="button">Forward</button>
-               </li>
-            </ul>
-         </div> -->
       </section>
       <!-- About section -->
       <section class="about section" id="about">
@@ -387,7 +379,7 @@
                <h2 class="title">Contacts</h2>
                <div class="contacts-info">
                   <address class="address">
-                     <a class="address-link link" href="https://goo.gl/maps/Wx7zS5FiUF3g5TBa7" target="_blank"
+                     <a class="address-link link" href="https://maps.app.goo.gl/5QJZj51dnm9wbtzQ9" target="_blank"
                         rel="noopener noreferrer"><svg class="address-icon" width="24" height="24">
                            <use href="./images/icons.svg#map-pin"></use>
                         </svg>st. Vasylkivska, 7A <br />
@@ -453,18 +445,19 @@
                   placeholder="&nbsp;" />
                <span class="modal-form-tag">Phone</span>
                <svg class="modal-form-icon" width="24" height="32">
-                  <use href="./images/icons.svg#phone"></use>
+                  <use href="./images/icons.svg#tel"></use>
                </svg>
             </label>
             <label class="modal-form-field">
                <input class="modal-form-input" type="email" name="email" required placeholder="&nbsp;" />
-               <span class="modal-form-tag">E-mail</span>
+               <span class="modal-form-tag">Email</span>
                <svg class="modal-form-icon" width="24" height="32">
                   <use href="./images/icons.svg#email"></use>
                </svg>
             </label>
             <label class="modal-form-field comment">
-               <textarea name="" id="" cols="30" rows="10" class="modal-form-textarea" placeholder="&nbsp;"></textarea>
+               <textarea name="modal-textarea" cols="30" rows="10" class="modal-form-textarea"
+                  placeholder="&nbsp;"></textarea>
                <span class="modal-form-tag">Comment</span>
             </label>
 
@@ -474,8 +467,9 @@
                   <use class="unchecked" href="./images/icons.svg#unchecked"></use>
                   <use class="checked" href="./images/icons.svg#checked"></use>
                </svg>
-               <span class="modal-policy-label">I accept the terms and conditions of the <a href=""
-                     class="policy-link">Privacy Policy</a></span>
+               <span class="modal-policy-label">I accept the terms and conditions of the
+                  <a href="#" class="policy-link">Privacy Policy</a>
+               </span>
             </label>
 
             <button class="modal-submit-btn button" type="submit">Send</button>
@@ -520,8 +514,6 @@
       </ul>
    </div>
 
-   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
    <!-- Mask for input -->
    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/jquery.inputmask.min.js"></script>
@@ -533,7 +525,6 @@
    <script src="./js/animation-on-scroll.js"></script>
    <script src="./js/header.js"></script>
    <script src="./js/modal.js"></script>
-   <script src="./js/inputmask.js"></script>
    <script src="./js/mobile-menu.js"></script>
 </body>
 
